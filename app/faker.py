@@ -34,20 +34,18 @@ async def root():
 @app.get("/japan")
 async def root():
     fake = Faker(['ja_JP'])
-    for i in range(10):
-        return {fake.name()}
+    return {fake.name()}
 
 @app.get("/Duits")
 async def root():
     fake = Faker(['de_DE'])
-    for i in range(10):
-        return {fake.name()}
+    return {fake.name()}
 
 class japan(BaseModel):
     name: str
 
 @app.post("/japan/", response_model=japan)
 async def Japan(jap: japan):
-    return jap
+return jap
 
 # uvicorn test:app --reload

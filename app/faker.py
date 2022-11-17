@@ -37,9 +37,9 @@ async def root():
     for i in range(10):
         return {fake.name()}
 
-@app.get("/Amerikaan")
+@app.get("/Duits")
 async def root():
-    fake = Faker(['en_US'])
+    fake = Faker(['de_DE'])
     for i in range(10):
         return {fake.name()}
 

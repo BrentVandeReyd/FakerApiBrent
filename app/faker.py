@@ -61,6 +61,6 @@ class japan(BaseModel):
 
 @app.post("/japan/", response_model=japan)
 async def Japan(jap: japan):
-return jap
+    return jap
 
 # uvicorn test:app --reload

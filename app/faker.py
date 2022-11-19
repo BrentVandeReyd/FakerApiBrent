@@ -56,11 +56,11 @@ async def root():
     fake = Faker()
     return {fake.phone_number()}
 
-class japan(BaseModel):
+class pst(BaseModel):
     name: str
-
-@app.post("/japan/", response_model=japan)
-async def Japan(jap: japan):
-    return jap
+    email: str
+@app.post("/login")
+async def Japan(post: pst):
+    return post
 
 # uvicorn test:app --reload

@@ -35,10 +35,16 @@ async def root():
     fake = Faker(['ja_JP'])
     return {fake.name()}
 
-@app.get("/Duits")
+@app.get("/duits")
 async def root():
     fake = Faker(['de_DE'])
     return {fake.name()}
+
+@app.get("/amerikaan")
+async def root():
+    fake = Faker(['en_US'])
+    return {fake.name()}
+
 
 @app.get("/zipcode")
 async def root():

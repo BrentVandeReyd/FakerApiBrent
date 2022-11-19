@@ -45,6 +45,11 @@ async def root():
     fake = Faker()
     return {fake.zipcode()}
 
+@app.get("/number")
+async def root():
+    fake = Faker()
+    return {fake.phone_number()}
+
 class japan(BaseModel):
     name: str
 

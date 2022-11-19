@@ -26,7 +26,6 @@ app.add_middleware(
 
 @app.get("/internet")
 async def root():
-    i=0
     fake = Faker()
     fake.add_provider(internet)
     return {fake.ipv4_private()}
@@ -40,6 +39,11 @@ async def root():
 async def root():
     fake = Faker(['de_DE'])
     return {fake.name()}
+
+@app.get("/zipcode")
+async def root():
+    fake = Faker()
+    return {fake.zipcode()}
 
 class japan(BaseModel):
     name: str
